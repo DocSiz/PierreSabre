@@ -4,7 +4,7 @@ public class Humain {
 	
 	private String nom;
 	private String boisson;
-	protected int argent;
+	private int argent;
 	
 	
 	
@@ -22,10 +22,15 @@ public class Humain {
 		return argent;
 	}
 	
+	protected void setArgent(int nouvelleValeur) {
+		argent = nouvelleValeur;
+		
+	}
+	
 	public void direBonjour() {
 		parler("Bonjour ! Je m’appelle " + nom + " et j’aime boire du "+ boisson +".\n");
 	}
-	protected void parler(String texte) {
+	public void parler(String texte) {
 		System.out.printf("(%s) - %s", nom , texte);
 	}
 	
@@ -42,12 +47,12 @@ public class Humain {
 		}
 	}
 	
-	public int gagnerArgent(int prix) {
-		return argent + prix;
+	public void gagnerArgent(int prix) {
+		argent = argent + prix;
 	}
 	
-	public int perdreArgent(int prix) {
-		return argent - prix;
+	public void perdreArgent(int prix) {
+		argent = argent - prix;
 	}
 
 }	
